@@ -1,0 +1,700 @@
+/* Add Playfair Display and Poppins fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --playfair: 'Playfair Display', serif;
+    --poppins: 'Poppins', sans-serif;
+    --primary-blue: #28a6f3;
+    --dark-grey: rgb(42, 46, 49);
+    --medium-grey: #555;
+    --light-grey: #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    word-wrap: break-word;
+    overflow-x: hidden;
+    padding-top: 70px; /* Fixed nav balandligiga mos padding */
+    background-color: var(--light-grey);
+    font-family: var(--poppins);
+    line-height: 1.6;
+    color: #333;
+    min-height: 100vh; /* Footer pastda turishi uchun */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fixed Navigation Bar */
+.navbar {
+    min-height: 70px;
+    width: 100%; /* vw o'rniga % ishlatsa responsivlik uchun qulayroq */
+    background-color: #000000e0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 40px;
+    flex-wrap: wrap; /* Kichik ekranlarda elementlar pastga tushishi uchun */
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-left a {
+    font-size: 1.8rem;
+    font-family: var(--playfair);
+    color: white;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.nav-left a:hover {
+    color: var(--primary-blue);
+}
+
+/* Navigation Links (Desktop View) */
+.nav-right {
+    display: flex; /* Default: flex row for desktop */
+    align-items: center;
+    gap: 20px;
+    list-style: none; /* Remove list bullets */
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    transition: all 0.3s ease; /* Animation for mobile toggle */
+}
+
+.nav-right li a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    padding: 5px 10px;
+    font-family: var(--poppins);
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-right li a:hover {
+    color: var(--primary-blue);
+}
+
+/* Hamburger Menu Toggle Button */
+.nav-toggle {
+    display: none; /* Default: hidden on desktop */
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-toggle:hover {
+    color: var(--primary-blue);
+}
+
+
+/* Header1 - Asosiy fon va Hero Section konteyneri */
+.header1 {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5) ),url('./banner-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Navbar tepada, Hero section pastda */
+    text-align: center;
+    color: white;
+    padding-top: 70px; /* Navbar balandligiga mos bo'sh joy */
+}
+
+/* Hero Section kontenti konteyneri */
+.hero-section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    flex-grow: 1; /* Hero section qolgan joyni egallashi uchun */
+}
+
+/* Hero Section ichidagi kontent */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px;
+    max-width: 900px;
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: var(--playfair);
+    /* Animation */
+    animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.hero-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    width: 100%;
+    line-height: 1.5;
+    /* Animation */
+    animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.3s both;
+}
+
+#search1 {
+    width: 90%;
+    max-width: 500px;
+    height: 55px;
+    border-radius: 3em;
+    padding: 0 1.5em;
+    border: none;
+    font-size: 1rem;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    outline: none;
+    transition: box-shadow 0.3s ease;
+    /* Animation */
+    animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.6s both;
+    font-family: var(--poppins); /* Placeholder uchun ham fontni qo'shish */
+}
+
+#search1::placeholder {
+    color: #888;
+    opacity: 1;
+    font-family: var(--poppins);
+}
+
+#search1:focus {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+
+/* Section Titles */
+.section-title {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 60px 20px 30px 20px;
+    text-align: center;
+    background-color: var(--light-grey);
+}
+
+.section-title h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-family: var(--playfair);
+    font-weight: 700;
+    color: #333;
+}
+
+.section-title h5 {
+    font-size: 1.1rem;
+    color: var(--medium-grey);
+    font-weight: normal;
+    margin-top: 0;
+    font-family: var(--poppins);
+}
+
+
+/* Card Grid Section */
+.card-section {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding: 0px 20px 60px 20px;
+    background-color: var(--light-grey);
+}
+
+/* Cards Container (Grid) */
+.cards-container {
+    max-width: 1200px;
+    width: 100%;
+    height: auto;
+    display: grid;
+    /* Responsive grid columnlar media queryda beriladi */
+    gap: 20px;
+    padding: 0;
+}
+
+/* Each Card */
+.box-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Animation */
+    animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.box-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Image Container (inside card) */
+.box-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.box-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.box-card:hover .box-img img {
+    transform: scale(1.05);
+}
+
+/* Title over the image */
+.box-img h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    font-size: 1em;
+    z-index: 2;
+    border-radius: 3px;
+    font-family: var(--poppins);
+    font-weight: 600;
+}
+
+/* Card text content container */
+.box-card-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    text-align: center;
+}
+
+.box-card-content h3 { /* Bu aslida html da yo'q edi, agar qo'shmoqchi bo'lsangiz style. */
+     font-size: 1.2em;
+     margin-bottom: 10px;
+     font-family: var(--playfair);
+     font-weight: 700;
+     color: #333;
+}
+
+.box-card-content p {
+    font-size: 0.9em;
+    color: var(--medium-grey);
+    line-height: 1.4;
+    font-family: var(--poppins);
+}
+
+
+/* About Section */
+.about-section {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--light-grey);
+}
+
+.about-content {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-content h2 {
+    font-size: 2em;
+    font-family: var(--playfair);
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--medium-grey);
+    margin-bottom: 10px;
+    font-family: var(--poppins);
+}
+
+
+/* Footer */
+footer {
+    width: 100%;
+    height: auto;
+    background-color: var(--dark-grey);
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: auto; /* Push footer to the bottom */
+    font-family: var(--poppins);
+}
+
+.footer-brand h1 {
+     font-size: 1.2em;
+     font-weight: 600;
+     font-family: var(--poppins);
+     margin-bottom: 20px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px; /* Ikonkalar orasidagi bo'sh joy */
+    margin-bottom: 20px;
+}
+
+.footer-social a {
+     color: inherit; /* Use parent color */
+}
+
+.footer-social i {
+    font-size: 2.5em;
+    margin: 0 0.3em; /* Old margin replaced by gap and smaller margin */
+    transition: color 0.5s ease, transform 0.5s ease;
+    color: #ffffff; /* Default icon color */
+}
+
+/* Ikonka hover stillari */
+#instagram:hover { color: #E1306C; } /* Instagram gradient color often */
+#facebook:hover { color: #1877F2; }
+#email:hover { color: #EA4335; } /* Google Mail color */
+#youtube:hover { color: #FF0000; }
+#telegram:hover { color: #0088CC; }
+
+.footer-social i:hover {
+    animation: pulse 1s ease-in-out infinite both;
+}
+
+/* Chegara stillari (agar kerak bo'lsa footerga border-top berish tavsiya etiladi) */
+/* .chegara{
+    width: 100%;
+    height: 7px;
+    background-color: var(--primary-blue);
+    margin-top: 30px;
+} */
+
+
+/* --- Animista Keyframes --- */
+
+/* Fade-in animation */
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Slide-in-bottom animation */
+@-webkit-keyframes slide-in-bottom {
+    0% {
+        -webkit-transform: translateY(1000px);
+                transform: translateY(1000px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slide-in-bottom {
+    0% {
+        -webkit-transform: translateY(1000px);
+                transform: translateY(1000px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Pulse animation */
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+    }
+    100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+}
+@keyframes pulse {
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+    }
+    100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+}
+
+
+/* --- Media Querylar (Moslashtirish uchun) --- */
+
+/* Katta ekranlar uchun 3 grid column */
+@media (min-width: 992px) {
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 column */
+    }
+}
+
+/* planshetlar va kichik noutbuklar (masalan, 768px dan 991px gacha) uchun 2 grid column */
+@media (min-width: 768px) and (max-width: 991px) {
+    body { padding-top: 70px; }
+    .navbar { padding: 10px 15px; }
+
+    /* Nav links */
+    .nav-right { gap: 10px; }
+    .nav-right li a { font-size: 1rem; padding: 5px 8px; }
+
+    /* Header content */
+    .hero-content { max-width: 700px; padding: 0 15px; }
+    .hero-content h1 { font-size: 3em; }
+    .hero-content p { font-size: 1rem; max-width: 500px; }
+    #search1 { width: 80%; max-width: 350px; height: 45px; font-size: 1rem; }
+
+    /* Section titles */
+    .section-title { padding: 30px 15px 15px 15px; }
+    .section-title h1 { font-size: 2em; }
+    .section-title h5 { font-size: 1rem; }
+
+    /* Card Grid */
+    .card-section { padding: 15px 15px 30px 15px; }
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 column */
+        gap: 15px;
+    }
+    .box-card { border-radius: 5px; }
+    .box-img h3 { font-size: 0.9em; padding: 4px 8px; bottom: 8px; left: 8px; }
+    .box-card-content { padding: 10px; }
+    .box-card-content p { font-size: 0.85em; }
+
+    /* About Section */
+    .about-section { padding: 30px 15px; }
+    .about-content { max-width: 700px; }
+    .about-content h2 { font-size: 1.8em; margin-bottom: 10px; }
+    .about-content p { font-size: 1rem; margin-bottom: 8px; }
+
+    /* Footer */
+    footer { padding: 30px 15px; }
+    .footer-social i { font-size: 2em; margin: 0 0.4em; }
+    .footer-brand h1 { font-size: 0.9em; margin-bottom: 15px; }
+    .footer-social { margin-bottom: 15px; gap: 8px; }
+}
+
+/* Telefonlar (masalan, 767px gacha) uchun 1 grid column va mobil navigatsiya */
+@media (max-width: 767px) {
+    body { padding-top: 60px; } /* Navbar balandligiga mos */
+
+    .navbar {
+        flex-direction: row; /* Itemlar yonma-yon qoladi (logo va toggle) */
+        justify-content: space-evenly; /* Logo chapda, toggle o'ngda */
+        padding: 8px 10px;
+        min-height: 60px; /* Mobil navbar balandligi */
+        align-items: center;
+    }
+
+    /* Hamburger icon - faqat mobilda ko'rinadi */
+    .nav-toggle {
+        display: block;
+    }
+
+    /* Nav links - mobilda yashiriladi va vertikal joylashadi */
+    .nav-right {
+        display: none; /* Default: hidden on mobile */
+        flex-direction: column; /* Links become vertical */
+        position: absolute; /* Position relative to navbar */
+        top: 60px; /* Position below the fixed navbar */
+        left: 0;
+        width: 100%; /* Full width */
+        background-color: #000000e0; /* Background color for the dropdown */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 10px 0;
+        text-align: center;
+        z-index: 9; /* Below the navbar */
+    }
+
+    /* Styles for mobile navigation items */
+    .nav-right li {
+        width: 100%;
+        margin-bottom: 5px; /* Space between links */
+    }
+
+    .nav-right li:last-child {
+        margin-bottom: 0;
+    }
+
+    .nav-right li a {
+        padding: 10px 0; /* Full width clickable area */
+        display: block; /* Make link take full width of li */
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1rem;
+    }
+
+    /* Class added by JS when toggle is clicked */
+    .nav-right.active {
+        display: flex; /* Show the links when active */
+    }
+     /* Optional: Add a border or indicator for active link in mobile menu */
+    .nav-right.active li a.home { /* Misol: Home link uchun */
+         color: var(--primary-blue);
+    }
+
+
+    /* Header content */
+    .hero-content { max-width: 95%; padding: 0 10px; }
+    .hero-content h1 { font-size: 2.5em; margin-bottom: 15px; }
+    .hero-content p { font-size: 0.9rem; margin-bottom: 20px; }
+    #search1 { width: 90%; max-width: 300px; height: 40px; font-size: 0.9rem; }
+
+
+    /* Section titles */
+    .section-title { padding: 20px 10px 10px 10px; }
+    .section-title h1 { font-size: 1.8em; }
+    .section-title h5 { font-size: 0.85rem; }
+
+    /* Card Grid */
+    .card-section { padding: 10px 10px 20px 10px; }
+    .cards-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 column */
+        gap: 10px;
+    }
+    .box-card { border-radius: 5px; }
+    .box-img h3 { font-size: 0.8em; padding: 3px 6px; bottom: 5px; left: 5px; }
+    .box-card-content { padding: 10px; }
+    .box-card-content p { font-size: 0.8em; }
+
+    /* About Section */
+    .about-section { padding: 20px 10px; }
+    .about-content { max-width: 95%; }
+    .about-content h2 { font-size: 1.6em; margin-bottom: 10px; }
+    .about-content p { font-size: 0.9rem; margin-bottom: 5px; }
+
+    /* Footer */
+    footer { padding: 20px 10px; }
+    .footer-social i { font-size: 1.8em; margin: 0 0.3em; }
+    .footer-brand h1 { font-size: 0.8em; margin-bottom: 10px; }
+    .footer-social { margin-bottom: 10px; gap: 5px; }
+}
+
+/* Juda kichik telefonlar (masalan, 480px gacha) uchun qo'shimcha sozlashlar */
+@media (max-width: 480px) {
+    .hero-content h1 { font-size: 2em; }
+    .hero-content p { font-size: 0.8rem; }
+    #search1 { height: 35px; font-size: 0.8rem; }
+
+    .section-title h1 { font-size: 1.5em; }
+    .section-title h5 { font-size: 0.8rem; }
+
+    .cards-container { gap: 5px; }
+    .box-card-content { padding: 8px; }
+    .box-card-content p { font-size: 0.7em; }
+
+    .about-content h2 { font-size: 1.4em; }
+    .about-content p { font-size: 0.8rem; }
+
+    .footer-social i { font-size: 1.5em; }
+}
+/* Asosiy style */
+body {
+    margin: 0;
+    font-family: sans-serif;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    padding: 15px 20px;
+    color: white;
+  }
+  
+  .logo {
+    font-size: 24px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  
+  /* === Responsive qism === */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none; /* Telefon va planshetlarda menyu yashiriladi */
+    }
+  
+    .hamburger {
+      display: block; /* Menu bar ko'rsatiladi */
+    }
+  }
+  

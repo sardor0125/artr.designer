@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art.Design Blog</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header class="header1">
+
+          <nav class="navbar">
+            <div class="logo">Art.Designer</div>
+            <ul class="nav-links">
+              <li><a href="#">Bosh sahifa</a></li>
+              <li><a href="#">Haqida</a></li>
+              <li><a href="#">Xizmatlar</a></li>
+              <li><a href="#">Aloqa</a></li>
+            </ul>
+            <div class="hamburger">
+              &#9776;
+            </div>
+          </nav>
+      
+        
+
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Art. Design Blog</h1>
+                <p>Everything That You Want To Know About Art & Design</p>
+                <input type="search" placeholder="Find Your Content..." name="" id="search1">
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="section-title">
+            <h1>Recent Arts & Designs</h1>
+            <h5>RECENT ARTS & DESIGNS ON THE BLOG</h5>
+        </section>
+
+        <section class="card-section">
+            <div class="cards-container">
+                <div class="box-card">
+                    <div class="box-img">
+                        <img src="art-design-1.jpg" alt="Art Design Image 1">
+                        <h3>Art & Design</h3>
+                    </div>
+                    <div class="box-card-content">
+                        <p>Make An Awesome Art Portfolio For College Or University</p>
+                    </div>
+                </div>
+
+                <div class="box-card">
+                    <div class="box-img">
+                        <img src="art-design-2.jpg" alt="Art Design Image 2">
+                        <h3>Art & Design</h3>
+                    </div>
+                    <div class="box-card-content">
+                        <p>Make An Awesome Art Portfolio For College Or University</p>
+                    </div>
+                </div>
+
+                <div class="box-card">
+                    <div class="box-img">
+                        <img src="art-design-3.jpg" alt="Art Design Image 3">
+                        <h3>Art & Design</h3>
+                    </div>
+                    <div class="box-card-content">
+                        <p>Make An Awesome Art Portfolio For College Or University</p>
+                    </div>
+                </div>
+
+                <div class="box-card">
+                    <div class="box-img">
+                        <img src="art-design-4.jpg" alt="Art Design Image 4">
+                        <h3>Art & Design</h3>
+                    </div>
+                    <div class="box-card-content">
+                        <p>Make An Awesome Art Portfolio For College Or University</p>
+                    </div>
+                </div>
+
+                <div class="box-card">
+                    <div class="box-img">
+                        <img src="art-design-5.jpg" alt="Art Design Image 5">
+                        <h3>Art & Design</h3>
+                    </div>
+                    <div class="box-card-content">
+                        <p>Make An Awesome Art Portfolio For College Or University</p>
+                    </div>
+                </div>
+
+                <div class="box-card">
+                    <div class="box-img">
+                        <img src="art-design-6.jpg" alt="Art Design Image 6">
+                        <h3>Art & Design</h3>
+                    </div>
+                    <div class="box-card-content">
+                        <p>Make An Awesome Art Portfolio For College Or University</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="about-section">
+             <div class="about-content">
+                 <h2>About Section Title</h2>
+                 <p>This is the paragraph content for this section.</p>
+                 <p>You can add more paragraphs here.</p>
+             </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-brand">
+            <h1>Art Design Company</h1>
+        </div>
+        <div class="footer-social">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" id="instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook" id="facebook"></i></a>
+            <a href="#" aria-label="Email"><i class="fa-solid fa-envelope" id="email"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" id="youtube"></i></a>
+            <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram" id="telegram"></i></a>
+        </div>
+        </footer>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navbarNav = document.getElementById('navbarNav');
+        const navbar = document.querySelector('.navbar'); // Nav elementini topish
+
+        if (navToggle && navbarNav && navbar) {
+            navToggle.addEventListener('click', () => {
+                navbarNav.classList.toggle('active');
+                navbar.classList.toggle('nav-active'); // Nav elementiga ham class qo'shamiz
+            });
+        }
+    </script>
+
+</body>
+</html>
